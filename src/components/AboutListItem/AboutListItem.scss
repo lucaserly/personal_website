@@ -1,0 +1,36 @@
+.app__aboutlistitem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+
+  .app__aboutlistitem-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 900px) {
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.app__aboutlistitem-icon.visible {
+  animation: icon-spin 10s;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}

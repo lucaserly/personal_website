@@ -1,0 +1,33 @@
+.app__progressbar-container {
+  position: relative;
+  height: 10px;
+  width: 70px;
+  margin-left: 0.8rem;
+}
+
+.progress {
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  border-radius: 50px;
+  animation: 1.5s in-out linear;
+}
+
+@keyframes in-out {
+  0% {
+    width: 0;
+    transform: translateX(-1%);
+  }
+  45%,
+  55% {
+    transform: translateX(0);
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  border-radius: 50px;
+}
