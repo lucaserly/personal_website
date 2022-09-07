@@ -15,6 +15,7 @@ import orcom_logo from '../assets/c&a.jpeg';
 
 import frontend from '../assets/web-programming.png';
 import backend from '../assets/database-storage (3).png';
+import running from '../assets/running.png';
 
 const images = {
   email,
@@ -32,6 +33,7 @@ const images = {
   fisi_logo,
   corefin_logo,
   orcom_logo,
+  running
 };
 
 export default images;

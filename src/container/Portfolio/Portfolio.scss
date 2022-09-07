@@ -148,12 +148,17 @@
 
 .app__portfolio-mobile {
   display: flex;
-  width: 100%;
-  justify-content: center;
+  width: 70%;
+  justify-content: space-around;
+  margin-top: 10%;
 }
 
 .app__portfolio-item-mobile {
   text-decoration: none;
   color: black;
-  padding: 5% 5% 0 5%;
+
+  // padding: 5% 5% 0 5%;
+  // padding-top: 5%;
+  // padding-right: 5%;
+  // padding-left: 5%;
 }

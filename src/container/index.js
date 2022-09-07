@@ -4,3 +4,4 @@ export { default as Portfolio } from './Portfolio/Portfolio';
 export { default as Experience } from './Experience/Experience';
 export { default as Testimonial } from './Testimonial/Testimonial';
 export { default as Footer } from './Footer/Footer';
+export { default as Hobbies } from './Hobbies/Hobbies';

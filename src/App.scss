@@ -14,7 +14,6 @@
 .app__container {
   width: 100%;
   min-height: 100vh;
-
   display: flex;
   flex-direction: row;
 }
@@ -186,18 +185,43 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .app__navigation {
     display: none;
   }
 
+  .copyright {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .app__social {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
   }
+}
 
-  .copyright {
-    padding: 2rem;
+.app__spinning-logo-container {
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__spinning-logo {
+  animation: spin infinite 4s linear;
+  height: 190px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

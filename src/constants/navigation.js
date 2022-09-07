@@ -1,3 +1,3 @@
-const navigation = ['home', 'about', 'portfolio', 'experience', 'contact'];
+const navigation = ['home', 'about', 'portfolio', 'experience', 'contact', 'hobbies'];
 
 export default navigation;

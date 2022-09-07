@@ -3,7 +3,7 @@ import './Header.scss';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
 import { AppWrap } from '../../wrapper';
-import { useOnScreen } from '../../hooks';
+import { useIsMobile, useOnScreen } from '../../hooks';
 
 const variants = {
   show: {
@@ -27,6 +27,7 @@ const placeholderText = [
 ];
 
 const Header = () => {
+  const isMobile = useIsMobile();
   const ref = useRef();
   const isVisible = useOnScreen(ref);
   const [state, setState] = useState(placeholderText[0]);
@@ -48,7 +49,10 @@ const Header = () => {
 
   return (
     <>
-      <div className='app__header app__flex'>
+      <div
+        className='app__header app__flex'
+        style={isMobile ? { paddingTop: '3%' } : {}}
+      >
         <motion.div
           whileInView={{ x: [-100, 0], opacity: [0, 1] }}
           transition={{ duration: 0.5 }}

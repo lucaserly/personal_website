@@ -5,15 +5,75 @@
   align-items: flex-start;
   width: 100%;
   max-height: 900px;
-  margin-top: 3rem;
   overflow-y: auto;
-
-  @media screen and (max-width: 900px) {
-    margin-top: 2rem;
-  }
 
   @media screen and (max-width: 500px) {
     max-height: 1450px;
+  }
+}
+
+.app__experience-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 4rem 0 2rem;
+
+  .app__experience-filter-item {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+
+    @media screen and (min-width: 1700px) {
+      padding: 1rem 2rem;
+      border-radius: 0.85rem;
+    }
+  }
+
+  .item-active {
+    background-color: white;
+    color: black;
+  }
+}
+
+.app__experience-filter-mobile {
+  overflow: scroll;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 4rem;
+
+  .app__experience-filter-item {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .item-active {
+    background-color: white;
+    color: black;
   }
 }
 
@@ -62,7 +122,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
   .app__experience-item {
     display: flex;
     flex-direction: column;
@@ -89,41 +149,5 @@
       margin-top: 4px;
       margin-right: 12px;
     }
-  }
-}
-
-.app__experience-filter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  margin: 4rem 0 2rem;
-
-  .app__experience-filter-item {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--secondary-color);
-    color: white;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0.5rem;
-
-    &:hover {
-      background-color: white;
-      color: black;
-    }
-
-    @media screen and (min-width: 1700px) {
-      padding: 1rem 2rem;
-      border-radius: 0.85rem;
-    }
-  }
-
-  .item-active {
-    background-color: white;
-    color: black;
   }
 }

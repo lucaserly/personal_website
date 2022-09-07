@@ -3,12 +3,17 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Experience.scss';
+import { useIsMobile } from '../../hooks';
 
 const Experience = () => {
+  const isMobile = useIsMobile();
   const [experiences, setExperiences] = useState([]);
   const [activeFilter, setactiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filteredExperience, setFilteredExperience] = useState([]);
+  const listClassName = isMobile
+    ? 'app__experience-filter-mobile'
+    : 'app__experience-filter';
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -16,7 +21,12 @@ const Experience = () => {
       const sortedData = data.sort((a, b) => a.order - b.order);
       setExperiences(sortedData);
       setFilteredExperience(sortedData);
+      if (isMobile) {
+        setFilteredExperience([sortedData[0]]);
+        setactiveFilter(sortedData[0].company);
+      }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleWorkFilter = (item) => {
@@ -36,7 +46,8 @@ const Experience = () => {
   return (
     <>
       <h2 className='head-text'>Experience</h2>
-      <div className='app__experience-filter'>
+
+      <div className={listClassName}>
         {['All', ...experiences.map((experience) => experience.company)].map(
           (item, index) => (
             <div
@@ -51,6 +62,7 @@ const Experience = () => {
           )
         )}
       </div>
+
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}

@@ -1,0 +1,40 @@
+.app__hobbies {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.app__hobbies-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.app__hobbies-date-item {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 1700px) {
+    padding: 1rem 2rem;
+    border-radius: 0.85rem;
+  }
+
+}
+
+.item-active {
+  background-color: white;
+  color: black;
+}
