@@ -58,74 +58,82 @@ const Header = () => {
           transition={{ duration: 0.5 }}
           className='app__header-info'
         >
-          <div className='app__header-badge' ref={ref}>
-            <div className='badge-cmb'>
-              <span
-                className={isVisible ? 'waving visible' : 'waving'}
-                style={{ display: 'inline-block' }}
-              />
-              <span
-                style={{
-                  display: 'inline-block',
-                  marginRight: '1rem',
-                  marginLeft: '0rem',
-                }}
-              >
-                ,
-              </span>
-              <span
-                style={{
-                  display: 'inline-block',
-                  marginRight: '1rem',
-                }}
-              >
-                I
-              </span>
-              <span
-                style={{
-                  display: 'inline-block',
-                  marginRight: '1rem',
-                }}
-              >
-                am
-              </span>
-
-              {['L', 'u', 'c', 'a', 's'].map((letter) => (
-                <h1
-                  style={{ display: 'inline', marginRight: 5 }}
-                  className='head-text'
-                  key={letter}
+          <motion.div
+            whileInView={{ scale: [0, 1] }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+            variants={variants}
+            animate={'show'}
+            initial='hide'
+          >
+            <div className='app__header-badge' ref={ref}>
+              <div className='badge-cmb'>
+                <span
+                  className={isVisible ? 'waving visible' : 'waving'}
+                  style={{ display: 'inline-block' }}
+                />
+                <span
+                  style={{
+                    display: 'inline-block',
+                    marginRight: '1rem',
+                    marginLeft: '0rem',
+                  }}
                 >
-                  {letter}
-                </h1>
-              ))}
+                  ,
+                </span>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    marginRight: '1rem',
+                  }}
+                >
+                  I
+                </span>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    marginRight: '1rem',
+                  }}
+                >
+                  am
+                </span>
 
-              <span
-                style={{
-                  display: 'inline',
-                  marginRight: '1rem',
-                  marginLeft: '1rem',
-                }}
-              >
-                from
-              </span>
-              <span
-                className='flag'
-                style={{ display: 'inline-block', marginLeft: 5 }}
-              />
-            </div>
+                {['L', 'u', 'c', 'a', 's'].map((letter) => (
+                  <h1
+                    style={{ display: 'inline', marginRight: 5 }}
+                    className='head-text'
+                    key={letter}
+                  >
+                    {letter}
+                  </h1>
+                ))}
 
-            <div className='tag-cmp'>
-              <motion.div
-                key={state.text}
-                variants={variants}
-                animate={'show'}
-                initial='hide'
-              >
-                <span className='p-text'>{state.text}</span>
-              </motion.div>
+                <span
+                  style={{
+                    display: 'inline',
+                    marginRight: '1rem',
+                    marginLeft: '1rem',
+                  }}
+                >
+                  from
+                </span>
+                <span
+                  className='flag'
+                  style={{ display: 'inline-block', marginLeft: 5 }}
+                />
+              </div>
+
+              <div className='tag-cmp'>
+                <motion.div
+                  key={state.text}
+                  variants={variants}
+                  animate={'show'}
+                  initial='hide'
+                >
+                  <span className='p-text'>{state.text}</span>
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div

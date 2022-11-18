@@ -272,27 +272,7 @@ const Hobbies = () => {
       setActiveFilter(sportTypes[0]);
       setTimeout(() => setIsLoading(false), 2000);
     });
-    // const years = getYears(activities);
-    // const mostRecentYear = years[years.length - 1];
-    // const sportTypes = [...new Set(activities.map((el) => el.sport_type))];
-    // setActivities(activities);
-    // setFilteredActivities(
-    //   activities.filter(
-    //     (el) =>
-    //       getYear(el.start_date) === mostRecentYear &&
-    //       el.sport_type === sportTypes[0]
-    //   )
-    // );
-    // setSportTypes(sportTypes);
-    // setActiveYear(mostRecentYear);
-    // setActiveFilter(sportTypes[0]);
   }, []);
-
-  // useEffect(() => {
-  //   setFilteredActivities(
-  //     activities.filter((el) => el.sport_type === activeFilter)
-  //   );
-  // }, [activeFilter, activities]);
 
   useEffect(() => {
     const years = getYears(filteredActivies);
@@ -319,8 +299,6 @@ const Hobbies = () => {
             activeFilter
           );
 
-    // console.log('parsedData', parsedData);
-    // console.log('parsedDatasum', parsedData.reduce((cv, pv) => cv + pv.uv, 0));
     setParsedData(parsedData);
     setActiveYear(mostRecentYear);
     // eslint-disable-next-line react-hooks/exhaustive-deps
