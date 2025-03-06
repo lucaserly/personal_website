@@ -16,7 +16,7 @@ const fetchRequest = async (path, options) => {
 };
 
 const getNewToken = async () => {
-  const url = `https://www.strava.com/api/v3/oauth/token?client_id=${process.env.REACT_APP_STRAVA_CLIENT_ID}&client_secret=${process.env.REACT_APP_STRAVA_CLIENT_SECRET}&refresh_token=${process.env.REACT_APP_STRAVA_REFRESH_TOKEN}&grant_type=refresh_token`;
+  const url = `remove url because of security reasons`;
   const newToken = await fetchRequest(url, {
     method: 'POST',
     redirect: 'follow',
@@ -46,23 +46,8 @@ const getStravaActivitiesPerPage = (page) => {
     },
     redirect: 'follow',
   };
-  return fetchRequest(
-    `https://www.strava.com/api/v3/athlete/activities?after=0&page=${page}&per_page=200`,
-    requestOptions
-  );
+  return fetchRequest(`https://www.strava.com/api/v3/athlete/activities?after=0&page=${page}&per_page=200`, requestOptions);
 };
-
-// const getAllStravaActivities = async () => {
-//   let finalResult = [];
-//   let result = [];
-//   let page = 1;
-//   do {
-//     result = await getStravaActivitiesPerPage(page);
-//     page += 1;
-//     finalResult.push(...result);
-//   } while (result.length > 0);
-//   return finalResult;
-// };
 
 const getAllStravaActivities = async () => {
   if (Date.now() > tokenExpirationDate) await getNewToken();
@@ -77,13 +62,6 @@ const getAllStravaActivities = async () => {
   return finalResult;
 };
 
-// const getAllStravaActivities = async () => {
-//   return await getStravaActivitiesPerPage(1);
-// };
-
-const apiService = {
-  getStravaInfo,
-  getAllStravaActivities,
-};
+const apiService = { getStravaInfo, getAllStravaActivities };
 
 export default apiService;
